@@ -42,9 +42,7 @@
             this.Comands.Name = "Comands";
             this.Comands.Size = new System.Drawing.Size(172, 282);
             this.Comands.TabIndex = 0;
-            this.Comands.Text = "Доступні команди:\r\n1. Знайди ...\r\n2. Відкрий браузер\r\n3. Відкрий записник\r\n4. Від" +
-    "крий калькулятор\r\n5. Відкрий консоль\r\n6. Розкажи анектод\r\n7. Розкажи цікавий фак" +
-    "т\r\n8. Назви випадкове число";
+            this.Comands.Text = resources.GetString("Comands.Text");
             this.Comands.Click += new System.EventHandler(this.Comands_Click);
             // 
             // button1

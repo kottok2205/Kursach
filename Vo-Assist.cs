@@ -203,11 +203,11 @@ namespace Vo_Assist
             label1.Text = result;
 
             //label1.Text = strtrs;
-            if (result.Contains("Привіт") || result.Contains("привіт"))
+            if(result.Contains("Привіт") || result.Contains("привіт"))
             {
                 label1.Text = "Доброго дня, Вас вітає голосовий асистент \"Vo-Assist\" або просто \"Assist\"";
             }
-            else if (result.Contains("Знайди ") || result.Contains("знайди"))
+            else if(result.Contains("Знайди ") || result.Contains("знайди"))
             {
                 label1.Text = "Шукаю";
                 string scan = result;
@@ -215,31 +215,31 @@ namespace Vo_Assist
                 scanN = scan.Replace("знайди", "");
                 Process.Start("https://www.google.com.ua/search?q=" + scanN);
             }
-            else if (result.Contains("Відкрий браузер") || result.Contains("відкрий браузер"))
+            else if(result.Contains("Відкрий браузер") || result.Contains("відкрий браузер"))
             {
                 label1.Text = "Відкриваю";
                 Process.Start("chrome.exe");
             }
-            else if (result.Contains("Відкрий записник") || result.Contains("відкрий записник"))
+            else if(result.Contains("Відкрий записник") || result.Contains("відкрий записник"))
             {
                 label1.Text = "Відкриваю";
                 Process.Start("notepad.exe");
             }
-            else if (result.Contains("Відкрий калькулятор") || result.Contains("відкрий калькулятор"))
+            else if(result.Contains("Відкрий калькулятор") || result.Contains("відкрий калькулятор"))
             {
                 label1.Text = "Відкриваю";
                 Process.Start("calc.exe");
             }
-            else if (result.Contains("Відкрий консоль") || result.Contains("відкрий консоль"))
+            else if(result.Contains("Відкрий консоль") || result.Contains("відкрий консоль"))
             {
                 label1.Text = "Відкриваю";
                 Process.Start("cmd.exe");
             }
-            else if (result.Contains("Розкажи цікавий факт") || result.Contains("розкажи цікавий факт") || result.Contains("Розкажіть цікавий факт") || result.Contains("розкажіть цікавий факт"))
+            else if(result.Contains("Розкажи цікавий факт") || result.Contains("розкажи цікавий факт") || result.Contains("Розкажіть цікавий факт") || result.Contains("розкажіть цікавий факт"))
             {
                 label1.Text = fakt[random.Next(9)];
             }
-            else if (result.Contains("Розкажи анекдот") || result.Contains("розкажи анекдот"))
+            else if(result.Contains("Розкажи анекдот") || result.Contains("розкажи анекдот"))
             {
                 label1.Text = anekdot[random.Next(5)];
                 //label1.Text = anekdot[1];
@@ -251,15 +251,20 @@ namespace Vo_Assist
                 randN = rand.Replace("назви випадкове число від", "");*/
                 label1.Text = Convert.ToString(random.Next());
             }
+            else if(result.Contains("Відкрий YouTude") || result.Contains("відкрий YouTube"))
+            {
+                label1.Text = "Відкриваю";
+                Process.Start("https://www.youtube.com/");
+            }
             else
             {
-                //label1.Text = "Невідома команда";
+                label1.Text = "Невідома команда";
             }
             // Очистка потоков
             reader.Close();
             response.Close();
         }
-        /*static string getResponse(string urlAddress)
+        static string getResponse(string urlAddress)
         {
             string data = "";
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
@@ -282,7 +287,7 @@ namespace Vo_Assist
                 readStream.Close();
             }
             return data;
-        }*/
+        }
         private void Comands_Click(object sender, EventArgs e)
         {
 
