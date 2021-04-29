@@ -15,7 +15,6 @@ using NAudio.FileFormats;
 using NAudio.CoreAudioApi;
 using NAudio;
 using System.Speech.Synthesis;
-using System.Diagnostics;
 
 namespace Vo_Assist
 {
