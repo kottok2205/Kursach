@@ -38,15 +38,8 @@ namespace Vo_Assist
         //Получение данных из входного буфера 
         void waveIn_DataAvailable(object sender, WaveInEventArgs e)
         {
-                //Записываем данные из буфера в файл
-                writer.WriteData(e.Buffer, 0, e.BytesRecorded);
-        }
-
-        //Завершаем запись
-        void StopRecording()
-        {
-            MessageBox.Show("StopRecording");
-            waveIn.StopRecording();
+            //Записываем данные из буфера в файл
+            writer.WriteData(e.Buffer, 0, e.BytesRecorded);
         }
 
         //Окончание записи
@@ -98,13 +91,15 @@ namespace Vo_Assist
                 waveIn.StopRecording();
                 label1.Text = "";
                 ON = false;
-                button1.Text = "Запис";
+                button1.Text = "Записати";
                 //button2_Click(this, EventArgs.Empty);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
+
             Random random = new Random();
 
             //List<string> hello = new List<string>() {"Привіт", "Доброго дня", "Як ся маєш", "Добрий ранок", "Добрий вечір", "Hello", "Assist"};
@@ -248,7 +243,7 @@ namespace Vo_Assist
                 /*string rand = result;
                 string randN = rand.Replace("Назви випадкове число від", "");
                 randN = rand.Replace("назви випадкове число від", "");*/
-                label1.Text = Convert.ToString(random.Next());
+                label1.Text = Convert.ToString(random.Next(0, 100));
             }
             else if(result.Contains("Відкрий YouTude") || result.Contains("відкрий YouTube"))
             {
